@@ -1,7 +1,7 @@
 import * as React from "react";
-import { Toggle, FetchData } from "./index";
+import { Toggle, FetchData } from "../components/index";
 
-export const App = () => (
+export const Home = () => (
   <Toggle onToggle={on => console.log("on: ", on)}>
     <Toggle.On>The button is on</Toggle.On>
     <Toggle.Off>The button is off</Toggle.Off>
@@ -9,3 +9,5 @@ export const App = () => (
     <FetchData />
   </Toggle>
 );
+
+export default Home;

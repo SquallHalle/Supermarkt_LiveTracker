@@ -12,14 +12,7 @@
   "scripts": {
     "start": "parcel ./src/index.html",
     "build": "npm run type-check && parcel build ./src/index.html --public-url '/'",
-    "prettify": "prettier --write './src/**/*.{ts,tsx}'",
-    "test": "jest",
-    "test:watch": "jest --watch",
-    "type-check": "tsc --noEmit",
-    "type-check:watch": "tsc --noEmit --watch"
-  },
-  "husky": {
-    "hooks": {}
+    "prettify": "prettier --write './src/**/*.{ts,tsx}'"
   },
   "keywords": [
     "Typescript",
@@ -29,10 +22,11 @@
   "dependencies": {
     "babel-polyfill": "^6.26.0",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "react-router-dom": "^5.1.2"
   },
   "devDependencies": {
-    "@types/jest": "^24.0.11",
+    "@types/react-router-dom": "^5.1.3",
     "@types/node": "^11.13.6",
     "@types/react": "^16.8.14",
     "@types/react-dom": "^16.8.4",
