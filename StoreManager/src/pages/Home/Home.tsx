@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Toggle, FetchData } from "../components/index";
+import { Toggle, FetchData } from "../../components/index";
 
 export const Home = () => (
   <Toggle onToggle={on => console.log("on: ", on)}>
