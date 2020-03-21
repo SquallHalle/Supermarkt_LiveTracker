@@ -13,36 +13,39 @@ export function NavBar(props: NavbarProps) {
   const routes = [
     {
       icon: "info",
-      href: "/about"
+      href: "/about",
+      active_href: ["/about"]
     },
     {
       icon: "shopping_cart",
-      href: "/"
+      href: "/",
+      active_href: ["/"]
     },
     {
       icon: "account_circle",
-      href: "/auth"
+      href: "/auth",
+      active_href: ["/auth", "/register", "/updatestatus"]
     }
   ];
 
   return (
-    <nav className='navbar'>
-      <ul className='navbar__list'>
+    <nav className="navbar">
+      <ul className="navbar__list">
         {routes.map(item => {
           return (
             <li
               className={[
                 "navbar__listitem",
-                item.href === location.pathname ? "active" : ""
+                item.active_href.includes(location.pathname) ? "active" : ""
               ].join(" ")}
               key={item.href}
             >
               <Button
-                className='navbar__button'
+                className="navbar__button"
                 Type={ButtonTypes.Link}
                 href={item.href}
               >
-                <span className='material-icons'>{item.icon}</span>
+                <span className="material-icons">{item.icon}</span>
               </Button>
             </li>
           );
