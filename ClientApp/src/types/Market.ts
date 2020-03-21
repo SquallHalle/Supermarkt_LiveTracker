@@ -5,7 +5,7 @@ export interface Market {
   Adresse: string;
   GPSLocation: GeoLocation;
   Status?: number; // 1 = leer; 2=mittel; 3=voll; null = undefiniert
-  TimeStamp: Date; //Letzte Aktualisierung
+  TimeStamp?: Date; //Letzte Aktualisierung
 }
 
 export interface GeoLocation {
