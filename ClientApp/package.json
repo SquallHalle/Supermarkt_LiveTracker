@@ -11,7 +11,7 @@
   "main": "src/index.tsx",
   "scripts": {
     "start": "parcel ./src/index.html",
-    "build": "npm run type-check && parcel build ./src/index.html --public-url '/'",
+    "build": "parcel build ./src/index.html --public-url '/'",
     "prettify": "prettier --write './src/**/*.{ts,tsx}'"
   },
   "keywords": [

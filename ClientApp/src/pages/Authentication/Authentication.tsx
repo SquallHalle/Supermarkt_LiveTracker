@@ -1,11 +1,17 @@
 import * as React from "react";
-import { TextField, TextFieldTypes, Button, ButtonTypes } from "../../components/index";
+import {
+  InputField,
+  InputFieldTypes,
+  Button,
+  ButtonTypes
+} from "../../components/index";
 import { useDispatch, useSelector } from "react-redux";
 import { User } from "../../types/User";
 import { loginUser } from "../../store/userActions";
 import { RootStateType } from "../../store/index";
 import { Redirect } from "react-router-dom";
 import Api from "../../utils/FakeApi";
+import "./authentication.styles.css";
 
 export const Authentication = () => {
   let [username, setUsername] = React.useState("");
@@ -32,20 +38,35 @@ export const Authentication = () => {
   }
 
   return (
-    <div>
-      AuthenticationPage
-      <TextField title = "Username" Type={TextFieldTypes.Normal} />
-      <TextField title = "Password" Type={TextFieldTypes.Password} />
+    <div className='login_page'>
+      <InputField
+        placeholder='Username'
+        Type={InputFieldTypes.Text}
+        onChange={value => {
+          setUsername(value);
+        }}
+      />
+      <InputField
+        placeholder='Password'
+        Type={InputFieldTypes.Password}
+        onChange={value => {
+          setUsername(value);
+        }}
+      />
       <Button
         Type={ButtonTypes.Confirm}
         onClick={() => {
           populateLoginData();
         }}
       >
-        LogIn
+        Login
       </Button>
-      <Button Type={ButtonTypes.Link} href='/register'>
-        Register
+      <Button
+        className={"button--register"}
+        Type={ButtonTypes.Link}
+        href='/register'
+      >
+        Registrieren
       </Button>
     </div>
   );

@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Button, ButtonTypes } from "../../components/index";
+import { Button, ButtonTypes, StatusSlider } from "../../components/index";
 import { useDispatch, useSelector } from "react-redux";
 import { logoutUser, setUserInfo } from "../../store/userActions";
 import {
@@ -56,7 +56,6 @@ export const UpdateStatus = () => {
 
   return (
     <AuthorizedPage>
-      UpdateStatusPage
       <Button
         Type={ButtonTypes.Confirm}
         onClick={() => {
@@ -66,15 +65,12 @@ export const UpdateStatus = () => {
         LogOut
       </Button>
       <section className='UpdateStatus_ButtonList'>
-        <Button Type={ButtonTypes.Confirm} onClick={() => setStatus(1)}>
-          Leere Gänge
-        </Button>
-        <Button Type={ButtonTypes.Confirm} onClick={() => setStatus(2)}>
-          Ein paar Kunden
-        </Button>
-        <Button Type={ButtonTypes.Confirm} onClick={() => setStatus(3)}>
-          Voll, bitte nicht kommen
-        </Button>
+        <StatusSlider
+          step={1}
+          min={1}
+          max={3}
+          onChange={value => setStatus(value)}
+        />
       </section>
     </AuthorizedPage>
   );
