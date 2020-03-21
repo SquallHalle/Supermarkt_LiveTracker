@@ -11,6 +11,7 @@ import { AuthorizedPage } from "../index";
 import { useEffect } from "react";
 import Api from "../../utils/FakeApi";
 import { User } from "../../types/User";
+import "./UpdateStatus.styles.css";
 
 export const UpdateStatus = () => {
   const currentUser = useSelector(
@@ -56,15 +57,18 @@ export const UpdateStatus = () => {
 
   return (
     <AuthorizedPage>
-      <Button
-        Type={ButtonTypes.Confirm}
-        onClick={() => {
-          dispatch(logoutUser());
-        }}
-      >
-        LogOut
-      </Button>
-      <section className='UpdateStatus_ButtonList'>
+      <header className='updatestatus_header'>
+        <h1 className='updatestatus_header__title'>Lidl</h1>
+        <Button
+          Type={ButtonTypes.Confirm}
+          onClick={() => {
+            dispatch(logoutUser());
+          }}
+        >
+          LogOut
+        </Button>
+      </header>
+      <section className='updatestatus_sliderwrapper'>
         <StatusSlider
           step={1}
           min={1}

@@ -1,0 +1,11 @@
+.updatestatus_header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+}
+.updatestatus_header__title {
+  margin-right: 1rem;
+  color: #333;
+  font-size: 1rem;
+}
