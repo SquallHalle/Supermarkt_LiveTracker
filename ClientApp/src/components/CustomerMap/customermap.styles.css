@@ -1,0 +1,11 @@
+.customerMap {
+  height: 400px;
+  width: 400px;
+  overflow: hidden;
+  position: relative;
+}
+
+.customerMap__map {
+  height: 100%;
+  width: 100%;
+}

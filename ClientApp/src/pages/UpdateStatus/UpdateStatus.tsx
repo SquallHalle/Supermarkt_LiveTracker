@@ -17,6 +17,32 @@ export const UpdateStatus = () => {
       >
         LogOut
       </Button>
+      <section className='UpdateStatus_ButtonList'>
+        <Button
+          Type={ButtonTypes.Confirm}
+          onClick={() => {
+            dispatch(logoutUser());
+          }}
+        >
+          Leere Gänge
+        </Button>
+        <Button
+          Type={ButtonTypes.Confirm}
+          onClick={() => {
+            dispatch(logoutUser());
+          }}
+        >
+          Ein paar Kunden
+        </Button>
+        <Button
+          Type={ButtonTypes.Confirm}
+          onClick={() => {
+            dispatch(logoutUser());
+          }}
+        >
+          Voll, bitte nicht kommen
+        </Button>
+      </section>
     </AuthorizedPage>
   );
 };
