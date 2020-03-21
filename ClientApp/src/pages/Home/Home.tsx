@@ -14,10 +14,7 @@ export const Home = () => {
   }, []);
 
   const populateSpaceshipData = async function() {
-    // const response = await fetch("https://swapi.co/api/starships/9/");
-    // const data = await response.json();
     Api.GetMarketList().then(data => {
-      console.log(data);
       dispatch(addMarkets(data as Array<Market>));
     });
   };
