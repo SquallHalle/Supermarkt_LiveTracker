@@ -83,25 +83,35 @@ export const UpdateStatus = () => {
 
       <section className="updatestatus_sliderwrapper">
         {selectedMarket != null && selectedMarket.Status != null ? (
-          <img
-            className={[
-              "status_image",
-              "status_image--" + selectedMarket.Status
-            ].join(" ")}
-            src={"/assets/person_" + selectedMarket.Status + ".svg"}
-          ></img>
+          <div>
+            <img
+              className={[
+                "status_image",
+                "status_image--" + selectedMarket.Status
+              ].join(" ")}
+              src={"/assets/person_" + selectedMarket.Status + ".svg"}
+            ></img>
+            <StatusSlider
+              step={1}
+              min={1}
+              max={3}
+              onChange={value => setStatus(value)}
+              value={
+                selectedMarket && selectedMarket.Status
+                  ? selectedMarket.Status
+                  : 0
+              }
+            />
+          </div>
         ) : (
-          "no market"
+          <div>
+            <img
+              className={["status_image", "status_image--null"].join(" ")}
+              src={"/assets/person_null.svg"}
+            ></img>
+            <div>Der Nutzer ist keinem verfügbaren Markt zugeordnet</div>
+          </div>
         )}
-        <StatusSlider
-          step={1}
-          min={1}
-          max={3}
-          onChange={value => setStatus(value)}
-          value={
-            selectedMarket && selectedMarket.Status ? selectedMarket.Status : 0
-          }
-        />
       </section>
     </AuthorizedPage>
   );
