@@ -1,8 +1,13 @@
 import * as React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
-import { Toggle, FetchData } from "./components/index";
-import { Authentication,Home,MarketRegister,UpdateStatus } from "./pages/index";
+import { FetchData } from "./components/index";
+import {
+  Authentication,
+  Home,
+  MarketRegister,
+  UpdateStatus
+} from "./pages/index";
 
 export const App = () => (
   <Router>
@@ -29,13 +34,10 @@ export const App = () => (
 
       <Switch>
         <Route exact path='/'>
-          <div>
-            Main
-            <FetchData />
-          </div>
+          <Home />
         </Route>
         <Route path='/about'>
-          <Home />
+          <FetchData />
         </Route>
         <Route path='/updatestatus'>
           <UpdateStatus />

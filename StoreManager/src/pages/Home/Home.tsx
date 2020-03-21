@@ -1,13 +1,19 @@
 import * as React from "react";
-import { Toggle, FetchData } from "../../components/index";
+import { Button, ButtonTypes } from "../../components/index";
 
 export const Home = () => (
-  <Toggle onToggle={on => console.log("on: ", on)}>
-    <Toggle.On>The button is on</Toggle.On>
-    <Toggle.Off>The button is off</Toggle.Off>
-    <Toggle.Button />
-    <FetchData />
-  </Toggle>
+  <div>
+    map
+    <Button
+      Type={ButtonTypes.Confirm}
+      onClick={() => console.log("console log")}
+    >
+      Console Log
+    </Button>
+    <Button Type={ButtonTypes.Link} href='/about'>
+      Mark Login
+    </Button>
+  </div>
 );
 
 export default Home;
