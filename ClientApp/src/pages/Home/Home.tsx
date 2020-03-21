@@ -10,10 +10,10 @@ export const Home = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    populateSpaceshipData();
+    populateMarketData();
   }, []);
 
-  const populateSpaceshipData = async function() {
+  const populateMarketData = async function() {
     Api.GetMarketList().then(data => {
       dispatch(addMarkets(data as Array<Market>));
     });
