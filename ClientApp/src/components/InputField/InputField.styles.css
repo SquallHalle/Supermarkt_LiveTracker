@@ -1,0 +1,10 @@
+.inputfield {
+  background: #ffffff;
+  border: 3px solid #61c4fa;
+  box-sizing: border-box;
+  border-radius: 25px;
+  height: 2.5rem;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  max-width: 13rem;
+}
