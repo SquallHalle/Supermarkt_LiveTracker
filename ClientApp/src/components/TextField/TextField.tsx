@@ -20,23 +20,45 @@ export function TextField(props: TextFieldProps) {
     return (
       <Form.Group>
         <Form.Label>{props.title}</Form.Label>
-        <Form.Control onChange={props.onChange} />
+        <Form.Control
+          className={[
+            props.className,
+            "textfield",
+            "textfield--" + TextFieldTypes[props.Type].toLowerCase()
+          ].join(" ")}
+          onChange={props.onChange}
+        />
       </Form.Group>
     );
   } else if (props.Type === TextFieldTypes.Password) {
     return (
       <Form.Group>
         <Form.Label>{props.title}</Form.Label>
-        <Form.Control type="password" onChange={props.onChange} />
+        <Form.Control
+          className={[
+            props.className,
+            "textfield",
+            "textfield--" + TextFieldTypes[props.Type].toLowerCase()
+          ].join(" ")}
+          type="password"
+          onChange={props.onChange}
+        />
       </Form.Group>
     );
   } else {
-      return (
-        <Form.Group>
-          <Form.Label>{props.title}</Form.Label>
-          <Form.Control onChange={props.onChange} />
-        </Form.Group>
-      );
+    return (
+      <Form.Group>
+        <Form.Label>{props.title}</Form.Label>
+        <Form.Control
+          className={[
+            props.className,
+            "textfield",
+            "textfield--" + TextFieldTypes[props.Type].toLowerCase()
+          ].join(" ")}
+          onChange={props.onChange}
+        />
+      </Form.Group>
+    );
   }
 }
 
