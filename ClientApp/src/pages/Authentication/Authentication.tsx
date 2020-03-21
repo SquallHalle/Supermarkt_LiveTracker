@@ -13,7 +13,8 @@ export const Authentication = () => {
   const dispatch = useDispatch();
   let userData: User = {
     name: "Pete",
-    token: "jfklsadöjfölajeswilfjsdklöaj"
+    token: "jfklsadöjfölajeswilfjsdklöaj",
+    associatedMarketId: 43
   };
 
   if (currentUser != null) {
