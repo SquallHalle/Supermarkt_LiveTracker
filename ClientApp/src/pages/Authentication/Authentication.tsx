@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Button, ButtonTypes } from "../../components/index";
+import { TextField, TextFieldTypes, Button, ButtonTypes } from "../../components/index";
 import { useDispatch, useSelector } from "react-redux";
 import { User } from "../../types/User";
 import { loginUser } from "../../store/userActions";
@@ -25,6 +25,8 @@ export const Authentication = () => {
   return (
     <div>
       AuthenticationPage
+      <TextField title = "Username" Type={TextFieldTypes.Normal} />
+      <TextField title = "Password" Type={TextFieldTypes.Password} />
       <Button
         Type={ButtonTypes.Confirm}
         onClick={() => {
