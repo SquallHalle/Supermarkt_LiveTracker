@@ -1,6 +1,10 @@
 import { User } from "../types/User";
 import { ActionTypes, LOGIN_USER, LOGOUT_USER } from "./userActions";
 
+export interface userStateType {
+  currentUser?: User;
+}
+
 const initialState = {
   currentUser: null
 };
