@@ -5,22 +5,21 @@ export const SET_MARKET_STATUS = "SET_MARKET_STATUS";
 
 interface setMarketStatusAction {
   type: typeof SET_MARKET_STATUS;
-  payload: {
-    Token: string;
-    MarketID: number;
-    Status: number;
-  };
+  payload: setMarketStatusData;
 }
 interface addMarketsAction {
   type: typeof ADD_MARKETS;
   payload: Array<Market>;
 }
 
-export function setMarketStatus(marketData: {
+export interface setMarketStatusData {
   Token: string;
-  MarketID: number;
-  Status: number;
-}): setMarketStatusAction {
+  MarketId: number;
+  Status: number | null;
+}
+export function setMarketStatus(
+  marketData: setMarketStatusData
+): setMarketStatusAction {
   return {
     type: SET_MARKET_STATUS,
     payload: marketData

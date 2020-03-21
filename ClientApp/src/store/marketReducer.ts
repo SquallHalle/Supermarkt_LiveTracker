@@ -20,7 +20,7 @@ export function marketReducer(state = initialState, action: ActionTypes) {
         ...state,
         markets: [
           ...state.markets,
-          action.payload.filter((market: Market) => {
+          ...action.payload.filter((market: Market) => {
             return !currentMarketIds.includes(market.Id);
           })
         ]
@@ -28,7 +28,13 @@ export function marketReducer(state = initialState, action: ActionTypes) {
     case SET_MARKET_STATUS:
       return {
         ...state,
-        currentUser: null
+        markets: state.markets.map((market, i) => {
+          if (market.Id === action.payload.MarketId) {
+            return { ...market, Status: action.payload.Status };
+          } else {
+            return market;
+          }
+        })
       };
     default:
       return state;

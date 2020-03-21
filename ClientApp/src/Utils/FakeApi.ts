@@ -4,7 +4,7 @@ const Api = {
   GetMarketList: () => {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
-        resolve(data.GetMarketList);
+        resolve(data.GetMarketList.Markets);
       }, 1000);
     });
   },

@@ -1,11 +1,25 @@
 import * as React from "react";
 import { Button, ButtonTypes } from "../../components/index";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { logoutUser } from "../../store/userActions";
+import {
+  setMarketStatus,
+  setMarketStatusData
+} from "../../store/marketActions";
+import { RootStateType } from "../../store/index";
 import { AuthorizedPage } from "../index";
 
 export const UpdateStatus = () => {
   const dispatch = useDispatch();
+  const currentUser = useSelector(
+    (state: RootStateType) => state.user.currentUser
+  );
+  const MarketStatusTemplate: setMarketStatusData = {
+    Token: currentUser ? currentUser.token : "",
+    MarketId: currentUser ? currentUser.associatedMarketId : -1,
+    Status: null
+  };
+
   return (
     <AuthorizedPage>
       UpdateStatusPage
@@ -21,7 +35,7 @@ export const UpdateStatus = () => {
         <Button
           Type={ButtonTypes.Confirm}
           onClick={() => {
-            dispatch(logoutUser());
+            dispatch(setMarketStatus({ ...MarketStatusTemplate, Status: 1 }));
           }}
         >
           Leere Gänge
@@ -29,7 +43,7 @@ export const UpdateStatus = () => {
         <Button
           Type={ButtonTypes.Confirm}
           onClick={() => {
-            dispatch(logoutUser());
+            dispatch(setMarketStatus({ ...MarketStatusTemplate, Status: 2 }));
           }}
         >
           Ein paar Kunden
@@ -37,7 +51,7 @@ export const UpdateStatus = () => {
         <Button
           Type={ButtonTypes.Confirm}
           onClick={() => {
-            dispatch(logoutUser());
+            dispatch(setMarketStatus({ ...MarketStatusTemplate, Status: 3 }));
           }}
         >
           Voll, bitte nicht kommen
