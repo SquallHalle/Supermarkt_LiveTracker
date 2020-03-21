@@ -9,7 +9,7 @@ import {
 import { RootStateType } from "../../store/index";
 import { AuthorizedPage } from "../index";
 import { useEffect } from "react";
-import Api from "../../utils/FakeApi";
+import Api from "../../Utils/FakeApi";
 import { User } from "../../types/User";
 import "./UpdateStatus.styles.css";
 
