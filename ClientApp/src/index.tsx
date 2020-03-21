@@ -6,8 +6,6 @@ import { rootReducer } from "./store/index";
 import { App } from "./App";
 import "./index.css";
 
-import 'bootstrap/dist/css/bootstrap.min.css';
-
 const store = createStore(
   rootReducer /* preloadedState, */,
   (window as any).__REDUX_DEVTOOLS_EXTENSION__ &&

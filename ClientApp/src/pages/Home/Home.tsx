@@ -5,6 +5,7 @@ import { CustomerMap, Button, ButtonTypes } from "../../components/index";
 import { addMarkets } from "../../store/marketActions";
 import { Market } from "../../types/Market";
 import Api from "../../utils/FakeApi";
+import "./Home.styles.css";
 
 export const Home = () => {
   const dispatch = useDispatch();
@@ -20,11 +21,8 @@ export const Home = () => {
   };
 
   return (
-    <div>
+    <div className='Home'>
       <CustomerMap />
-      <Button Type={ButtonTypes.Link} href='/auth'>
-        Markt Login
-      </Button>
     </div>
   );
 };

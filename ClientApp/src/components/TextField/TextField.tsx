@@ -1,6 +1,6 @@
 import "./TextField.styles.css";
 import * as React from "react";
-import Form from "react-bootstrap/Form";
+// import Form from "react-bootstrap/Form";
 
 export enum TextFieldTypes {
   Password,
@@ -16,50 +16,51 @@ export interface TextFieldProps {
 }
 
 export function TextField(props: TextFieldProps) {
-  if (props.Type === TextFieldTypes.Normal) {
-    return (
-      <Form.Group>
-        <Form.Label>{props.title}</Form.Label>
-        <Form.Control
-          className={[
-            props.className,
-            "textfield",
-            "textfield--" + TextFieldTypes[props.Type].toLowerCase()
-          ].join(" ")}
-          onChange={props.onChange}
-        />
-      </Form.Group>
-    );
-  } else if (props.Type === TextFieldTypes.Password) {
-    return (
-      <Form.Group>
-        <Form.Label>{props.title}</Form.Label>
-        <Form.Control
-          className={[
-            props.className,
-            "textfield",
-            "textfield--" + TextFieldTypes[props.Type].toLowerCase()
-          ].join(" ")}
-          type="password"
-          onChange={props.onChange}
-        />
-      </Form.Group>
-    );
-  } else {
-    return (
-      <Form.Group>
-        <Form.Label>{props.title}</Form.Label>
-        <Form.Control
-          className={[
-            props.className,
-            "textfield",
-            "textfield--" + TextFieldTypes[props.Type].toLowerCase()
-          ].join(" ")}
-          onChange={props.onChange}
-        />
-      </Form.Group>
-    );
-  }
+  return "";
+  // if (props.Type === TextFieldTypes.Normal) {
+  //   return (
+  //     <Form.Group>
+  //       <Form.Label>{props.title}</Form.Label>
+  //       <Form.Control
+  //         className={[
+  //           props.className,
+  //           "textfield",
+  //           "textfield--" + TextFieldTypes[props.Type].toLowerCase()
+  //         ].join(" ")}
+  //         onChange={props.onChange}
+  //       />
+  //     </Form.Group>
+  //   );
+  // } else if (props.Type === TextFieldTypes.Password) {
+  //   return (
+  //     <Form.Group>
+  //       <Form.Label>{props.title}</Form.Label>
+  //       <Form.Control
+  //         className={[
+  //           props.className,
+  //           "textfield",
+  //           "textfield--" + TextFieldTypes[props.Type].toLowerCase()
+  //         ].join(" ")}
+  //         type="password"
+  //         onChange={props.onChange}
+  //       />
+  //     </Form.Group>
+  //   );
+  // } else {
+  //   return (
+  //     <Form.Group>
+  //       <Form.Label>{props.title}</Form.Label>
+  //       <Form.Control
+  //         className={[
+  //           props.className,
+  //           "textfield",
+  //           "textfield--" + TextFieldTypes[props.Type].toLowerCase()
+  //         ].join(" ")}
+  //         onChange={props.onChange}
+  //       />
+  //     </Form.Group>
+  //   );
+  // }
 }
 
 export default TextField;

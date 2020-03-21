@@ -1,6 +1,6 @@
 .customerMap {
-  height: 400px;
-  width: 400px;
+  height: 100vh;
+  width: 100vw;
   overflow: hidden;
   position: relative;
 }
@@ -8,4 +8,5 @@
 .customerMap__map {
   height: 100%;
   width: 100%;
+  z-index: 0;
 }
