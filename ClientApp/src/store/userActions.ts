@@ -1,0 +1,28 @@
+import { User } from "../types/User";
+
+export const LOGIN_USER = "LOGIN_USER";
+export const LOGOUT_USER = "LOGOUT_USER";
+
+interface loginUserAction {
+  type: typeof LOGIN_USER;
+  payload: User;
+}
+
+interface logoutUserAction {
+  type: typeof LOGOUT_USER;
+}
+
+export function loginUser(userData: User): loginUserAction {
+  return {
+    type: LOGIN_USER,
+    payload: userData
+  };
+}
+
+export function logoutUser() {
+  return {
+    type: LOGOUT_USER
+  };
+}
+
+export type ActionTypes = loginUserAction | logoutUserAction;
