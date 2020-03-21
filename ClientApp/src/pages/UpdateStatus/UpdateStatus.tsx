@@ -17,6 +17,13 @@ export const UpdateStatus = () => {
   const currentUser = useSelector(
     (state: RootStateType) => state.user.currentUser
   );
+  const selectedMarket = useSelector(
+    (state: RootStateType) =>
+      state.market.markets.filter(
+        item => item.Id === currentUser?.AssociatedMarketId
+      )[0]
+  );
+
   useEffect(() => {
     if (currentUser != null && currentUser.AssociatedMarketId == null) {
       populateUserData(currentUser.Token);
@@ -40,15 +47,20 @@ export const UpdateStatus = () => {
   };
 
   let setStatus = (status: number) => {
+    const previousStatus =
+      selectedMarket == null || selectedMarket.Status == undefined
+        ? null
+        : selectedMarket.Status;
+    dispatch(setMarketStatus({ ...MarketStatusTemplate, Status: status }));
     if (currentUser != null && currentUser.AssociatedMarketId != null) {
       Api.SetMarket(
         currentUser.Token,
         currentUser.AssociatedMarketId,
         status
       ).then(data => {
-        if (data) {
+        if (!data) {
           dispatch(
-            setMarketStatus({ ...MarketStatusTemplate, Status: status })
+            setMarketStatus({ ...MarketStatusTemplate, Status: previousStatus })
           );
         }
       });
@@ -57,8 +69,8 @@ export const UpdateStatus = () => {
 
   return (
     <AuthorizedPage>
-      <header className='updatestatus_header'>
-        <h1 className='updatestatus_header__title'>Lidl</h1>
+      <header className="updatestatus_header">
+        <h1 className="updatestatus_header__title">Lidl</h1>
         <Button
           Type={ButtonTypes.Confirm}
           onClick={() => {
@@ -68,12 +80,27 @@ export const UpdateStatus = () => {
           LogOut
         </Button>
       </header>
-      <section className='updatestatus_sliderwrapper'>
+
+      <section className="updatestatus_sliderwrapper">
+        {selectedMarket != null && selectedMarket.Status != null ? (
+          <img
+            className={[
+              "status_image",
+              "status_image--" + selectedMarket.Status
+            ].join(" ")}
+            src={"/assets/person_" + selectedMarket.Status + ".svg"}
+          ></img>
+        ) : (
+          "no market"
+        )}
         <StatusSlider
           step={1}
           min={1}
           max={3}
           onChange={value => setStatus(value)}
+          value={
+            selectedMarket && selectedMarket.Status ? selectedMarket.Status : 0
+          }
         />
       </section>
     </AuthorizedPage>

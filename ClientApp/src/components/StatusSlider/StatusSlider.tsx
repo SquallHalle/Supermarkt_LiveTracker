@@ -8,6 +8,7 @@ export interface StatusSliderProps {
   step: number;
   min: number;
   max: number;
+  value: number;
 }
 
 export enum StatusSliderValues {
@@ -17,7 +18,9 @@ export enum StatusSliderValues {
 }
 
 export function StatusSlider(props: StatusSliderProps) {
-  let [statusColor, setStatusColor] = React.useState("green");
+  let [statusColor, setStatusColor] = React.useState(
+    StatusSliderValues[props.value]
+  );
 
   const onSliderChange = (evt: React.ChangeEvent<HTMLInputElement>) => {
     setStatusColor(
@@ -42,11 +45,12 @@ export function StatusSlider(props: StatusSliderProps) {
         "statusslider",
         "statusslider--" + statusColor
       ].join(" ")}
-      type='range'
+      type="range"
       step={props.step}
       min={props.min}
       max={props.max}
       onChange={onSliderChange}
+      value={props.value}
     />
   );
 }

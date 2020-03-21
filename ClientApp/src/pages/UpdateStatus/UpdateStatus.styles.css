@@ -9,3 +9,14 @@
   color: #333;
   font-size: 1rem;
 }
+
+.updatestatus_sliderwrapper {
+  padding: 2rem;
+  margin-top: 3rem;
+}
+
+.status_image {
+  width: 100%;
+  margin: auto;
+  display: block;
+}
