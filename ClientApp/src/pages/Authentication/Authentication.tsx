@@ -10,7 +10,7 @@ import { User } from "../../types/User";
 import { loginUser } from "../../store/userActions";
 import { RootStateType } from "../../store/index";
 import { Redirect } from "react-router-dom";
-import Api from "../../utils/FakeApi";
+import Api from "../../Utils/FakeApi";
 import "./authentication.styles.css";
 
 export const Authentication = () => {

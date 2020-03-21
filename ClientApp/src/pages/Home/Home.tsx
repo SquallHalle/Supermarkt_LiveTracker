@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { CustomerMap, Button, ButtonTypes } from "../../components/index";
 import { addMarkets } from "../../store/marketActions";
 import { Market, MarketList } from "../../types/Market";
-import Api from "../../utils/FakeApi";
+import Api from "../../Utils/FakeApi";
 import { RootStateType } from "../../store/index";
 import "./Home.styles.css";
 
