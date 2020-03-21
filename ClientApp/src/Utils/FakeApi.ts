@@ -32,7 +32,17 @@ const Api = {
   GetUserProfil: (token: string) => {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
-        resolve(data.GetUserProfil);
+        resolve({
+          Name: data.GetUserProfil.UserName,
+          AssociatedMarketId: data.GetUserProfil.MarketId
+        });
+      }, 1000);
+    });
+  },
+  SetMarket: (token: string, MarketId: number, Status: number) => {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve(data.SetMarket.Success);
       }, 1000);
     });
   }

@@ -2,7 +2,7 @@ const data = {
   GetMarketList: {
     Markets: [
       {
-        MarketID: 42,
+        Id: 42,
         Name: "TollerNetto",
         Company: "Aldi",
         GPSLocation: {
@@ -14,7 +14,7 @@ const data = {
         TimeStamp: "01-01-1970"
       },
       {
-        MarketID: 43,
+        Id: 43,
         Name: "TollerLidl",
         Company: "Aldi",
         GPSLocation: {
@@ -28,7 +28,7 @@ const data = {
     ]
   },
   GetMarket: {
-    MarketID: 42,
+    Id: 42,
     Name: "TollerNetto",
     Company: "Aldi",
     GPSLocation: {
@@ -46,9 +46,12 @@ const data = {
     Success: true
   },
   GetUserProfil: {
-    UserName: "IWOdwi",
-    MarkedID: 42
+    UserName: "Diether Müller",
+    MarketId: 42
     //vielleicht noch mehr infos
+  },
+  SetMarket: {
+    Success: true // Rückgabe True/False für Erfolgreiches setzen
   }
 };
 

@@ -26,9 +26,11 @@ export function marketReducer(state = initialState, action: ActionTypes) {
         ]
       };
     case SET_MARKET_STATUS:
+      console.log(action.payload);
       return {
         ...state,
         markets: state.markets.map((market, i) => {
+          console.log();
           if (market.Id === action.payload.MarketId) {
             return { ...market, Status: action.payload.Status };
           } else {

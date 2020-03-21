@@ -5,16 +5,25 @@ import { User } from "../../types/User";
 import { loginUser } from "../../store/userActions";
 import { RootStateType } from "../../store/index";
 import { Redirect } from "react-router-dom";
+import Api from "../../utils/FakeApi";
 
 export const Authentication = () => {
+  let [username, setUsername] = React.useState("");
+  let [password, setPassword] = React.useState("");
   const currentUser = useSelector(
     (state: RootStateType) => state.user.currentUser
   );
   const dispatch = useDispatch();
-  let userData: User = {
-    name: "Pete",
-    token: "jfklsadöjfölajeswilfjsdklöaj",
-    associatedMarketId: 43
+  const populateLoginData = async function() {
+    Api.Login(username, password).then(data => {
+      let typedData = data as { Token: string };
+      let currentUser: User = {
+        Name: username,
+        Token: typedData.Token,
+        AssociatedMarketId: null
+      };
+      dispatch(loginUser(currentUser));
+    });
   };
 
   if (currentUser != null) {
@@ -28,7 +37,7 @@ export const Authentication = () => {
       <Button
         Type={ButtonTypes.Confirm}
         onClick={() => {
-          dispatch(loginUser(userData));
+          populateLoginData();
         }}
       >
         LogIn

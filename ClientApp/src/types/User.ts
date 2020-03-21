@@ -1,5 +1,5 @@
 export interface User {
-  name: string;
-  token: string;
-  associatedMarketId: number;
+  Name: string;
+  Token: string;
+  AssociatedMarketId: number | null;
 }
