@@ -28,6 +28,13 @@ const Api = {
         resolve(data.Login);
       }, 1000);
     });
+  },
+  GetUserProfil: (token: string) => {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve(data.GetUserProfil);
+      }, 1000);
+    });
   }
 };
 

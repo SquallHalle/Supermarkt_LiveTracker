@@ -44,6 +44,11 @@ const data = {
   },
   Register: {
     Success: true
+  },
+  GetUserProfil: {
+    UserName: "IWOdwi",
+    MarkedID: 42
+    //vielleicht noch mehr infos
   }
 };
 
