@@ -24,6 +24,30 @@ const data = {
         Adresse: "StraßeMitHausNummerUndSo",
         Status: 1,
         TimeStamp: "01-01-1970"
+      },
+      {
+        Id: 12335,
+        Name: "Rewe um die Ecke",
+        Company: "Rewe",
+        Adresse: "Straße5",
+        GPSLocation: { lat: 52.520008, long: 13.404954 },
+        Status: 3 // 1 = leer; 2=mittel; 3=voll; null = undefiniert
+      },
+      {
+        Id: 2562,
+        Name: "Rewe um die Ecke",
+        Company: "Rewe",
+        Adresse: "Straße3",
+        GPSLocation: { lat: 52.600008, long: 13.404954 },
+        Status: 2 // 1 = leer; 2=mittel; 3=voll; null = undefiniert
+      },
+      {
+        Id: 2462,
+        Name: "Rewe um die Ecke",
+        Company: "Rewe",
+        Adresse: "Straße3",
+        GPSLocation: { lat: 52.500008, long: 13.404954 },
+        Status: 1 // 1 = leer; 2=mittel; 3=voll; null = undefiniert
       }
     ]
   },
