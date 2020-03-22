@@ -1,0 +1,20 @@
+version: "3.7"
+services:
+
+  frontend:
+    build: 
+      context: ./ClientApp
+    container_name: "frontend"
+    labels:
+      - "traefik.enable=true"
+      #- "traefik.http.routers.helloweb.rule=Host(`test.isolatedshopping.me`)"
+      - "traefik.http.routers.frontend.rule=Host(`frontend.localhost`)" 
+      - "traefik.http.services.frontend.loadbalancer.server.port=80"
+      - "traefik.http.routers.contfrontendrolservice.entrypoints=web"
+    networks:
+      - "this"
+
+networks:
+    this:
+     name: backend
+     driver: bridge
