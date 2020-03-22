@@ -6,16 +6,16 @@ services:
       context: ./ClientApp
     container_name: "frontend"
     labels:
-      - "traefik.enable=true"
-      - "traefik.http.routers.frontend.rule=Host(`frontend.isolatedshopping.me`)"
-        #- "traefik.http.routers.controlservice.rule=Host(`controlservice.localhost`)" 
-      - "traefik.http.services.frontend.loadbalancer.server.port=80"
-        #      - "traefik.http.routers.frontend.entrypoints=web"
-      - "traefik.http.routers.frontend.entrypoints=websecure"
-      - "traefik.http.routers.frontend.tls.certresolver=myresolver"
-      - "traefik.http.routers.frontend-redirect.rule=HostRegexp(`{any:.*}`)"
-      - "traefik.http.routers.frontend-redirect.middlewares=frontend-redirect"
-      - "traefik.http.middlewares.frontend-redirect.redirectscheme.scheme=https"
+          - "traefik.enable=true"
+          - "traefik.http.routers.frontend.rule=Host(`frontend.isolatedshopping.me`)"
+        #- "traefik.http.routers.frontend.rule=Host(`frontend.localhost`)" 
+          - "traefik.http.services.frontend.loadbalancer.server.port=80"
+          #- "traefik.http.routers.frontend.entrypoints=web"
+          - "traefik.http.routers.frontend.entrypoints=websecure"
+          - "traefik.http.routers.frontend.tls.certresolver=myresolver"
+          - "traefik.http.routers.frontend-redirect.rule=HostRegexp(`{any:.*}`)"
+          - "traefik.http.routers.inpfrontendutservice-redirect.middlewares=frontend-redirect"
+          - "traefik.http.middlewares.frontend-redirect.redirectscheme.scheme=https"
 
     networks:
       - "this"
